@@ -1,7 +1,6 @@
 import { MovieItem } from "./MovieItem";
 import { MovieItemGrid } from "../styles/MovieItensDesignGrid";
 
-
 export const MoviesList = ({ movies }) => (
 
     <MovieItemGrid>     

@@ -12,21 +12,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2{
+h2 {
   color: white;
 }
 
-a{
+a {
   text-decoration: none;
   cursor: pointer;
   color: white;
 }
 
-.search{
+.search {
   text-align: center;
 }
 
-.titleHeader{
+.titleHeader {
   margin-left: 30px;
   font-family: 'Major Mono Display', monospace;
   color: #3D0158;
@@ -34,40 +34,79 @@ a{
   font-weight: bolder;
 }
 
-.details{
+.details {
   display: flex;
-  grid-template-columns: auto auto;
-  margin: auto;
-  width: 60%;
-  padding: 30px;
-
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Alinha os itens ao centro verticalmente */
+  padding: 20px;
+  flex-direction: column; /* Definindo a direção da flexbox como coluna */
+ 
 }
 
-.containerPoster{
-  float: left;
-  width: 40%;
-}
-.containerDetails1{
-  border-radius: 20px;
-  float:right;
-  width: 100%;
+/* Estilo para os detalhes do filme */
+.containerDetails1 {
+  margin-top: 20px; /* Espaço entre o poster e os detalhes */
   background-color: rgb(79, 26, 94);
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box; /* Inclui padding e bordas na largura total */
+  width: 100%; /* Largura dos detalhes em telas menores */
+  max-width: 800px; /* Limitando a largura máxima dos detalhes */
+}
+
+/* Estilo para o texto dos detalhes */
+.descriptionDetails{
+  width: 100%;
+  text-align: justify;
+  height: 200px;
+  margin-top: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+  color: white;
+  font-size: 14px;
+
 }
 
 
-.containerDetails1:hover{
-  top:-4px;
-  box-shadow:0 4px 3px rgba(105, 105, 105, 0.74);
+.genresDetails {
+  align-items: center;
+  position: relative;
+  margin-top: 40px;
+  width: 100%;
+  margin-right: 20px;
+  text-align: center;
+  max-width: 100%;
+}
+
+
+/* Media query para telas maiores */
+@media (min-width: 768px) {
+  .details {
+    flex-direction: row; /* Altera a direção do flex para linha em telas maiores */
+    align-items: center; /* Alinha os itens ao topo verticalmente */
+  }
+
+  .containerDetails1 {
+    margin-top: 0; /* Remove o espaço acima dos detalhes */
+    margin-left: 20px; /* Espaço entre o poster e os detalhes */
+    width: 100%; /* Largura dos detalhes em telas maiores */
+  }
+}
+
+.containerDetails1:hover {
+  top: -4px;
+  box-shadow: 0 4px 3px rgba(105, 105, 105, 0.74);
   position: relative;
 }
 
-html{
+
+html {
   background-color: #F5F5F5;
   width: 100%;
   height: 100%;
 }
 
-.descriptionDetails{
+.descriptionDetails {
   width: 92%;
   text-align: justify;
   height: 200px;
@@ -79,33 +118,28 @@ html{
 
 }
 
-.genresDetails{
-  align-items: center;
-  position: relative;
-  margin-top: 40px; 
-  width: 100%;
-  margin-right: 20px;
-  text-align: center;
-}
 
-.genres{
+
+.genres {
   border-radius: 20px;
   border: 2px solid rgba(255, 255, 255, 0.733);
-  padding: .5rem 1.5rem;
-  font-size: .7rem;
+  padding: .3rem 1rem; /* Reduzindo o preenchimento para telas menores */
+  font-size: .6rem; /* Diminuindo o tamanho do texto para telas menores */
   font-weight: 600;
   color: white;
-  margin: 5px;
- 
+  margin: 3px; /* Reduzindo o espaço entre os elementos para telas menores */
+  word-wrap: break-word;
 }
 
-.divisao{
-  width: 5px;;
+
+.divisao {
+  width: 5px;
+  ;
 }
 
-.genres:hover{
-  top:-4px;
-  box-shadow:0 4px 3px rgb(56, 56, 56);
+.genres:hover {
+  top: -4px;
+  box-shadow: 0 4px 3px rgb(56, 56, 56);
   position: relative;
 }
 
@@ -114,17 +148,17 @@ html{
   transition: all .2s ease-in-out;
   border-radius: 20px;
   margin: auto;
-  height: 100%;
+  height: 484px;
   /* float: left; */
 }
 
-.posterDetails:hover{
-  top:-4px;
-  box-shadow:0 4px 3px rgba(105, 105, 105, 0.74);
+.posterDetails:hover {
+  top: -4px;
+  box-shadow: 0 4px 3px rgba(105, 105, 105, 0.74);
   position: relative;
 }
 
-.titleDetail{
+.titleDetail {
   color: white;
   text-align: center;
   font-size: 30px;
@@ -133,22 +167,22 @@ html{
   border-radius: 20px;
 }
 
-.searchInput{
+.searchInput {
   border-radius: 10px;
   padding: 5px;
   background-color: rgb(242, 233, 245);
   border: #70028E solid 2px;
 }
 
-.containerDetails{
+.containerDetails {
   color: white;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
 
-.titleContainer{
-  width: 97,2%;
+.titleContainer {
+  width: 97, 2%;
   padding: 10px;
   float: right top;
   background: linear-gradient(40deg, rgba(0, 0, 0, 0.801), transparent);
@@ -158,54 +192,57 @@ html{
   border-radius: 10px;
 }
 
-.title{
+.title {
   text-align: right;
   font-size: 20px;
-  color:white;
-  float:left;
+  color: white;
+  float: left;
 }
 
-.date{
+.date {
   text-align: right;
   font-size: 20px;
-  color:white;
+  color: white;
   text-transform: uppercase;
 }
 
-.posterGrid{
+.posterGrid {
   position: relative;
   float: left;
   border-radius: 25px;
   margin: 18px;
   height: 90%;
-   
+
 }
 
-.posterGrid:hover{
-  top:-4px;
-  box-shadow:0 4px 3px rgb(117, 117, 117);
+.posterGrid:hover {
+  top: -4px;
+  box-shadow: 0 4px 3px rgb(117, 117, 117);
   position: relative;
 }
 
-.description{
+.description {
   text-align: justify;
   margin-top: 40px;
   margin-right: 20px;
   font-size: 14px;
-  color:black;
+  color: black;
 }
 
-.classNote{
+.classNote {
   display: flex;
+  align-items: center; /* Centralizar verticalmente */
+  justify-content: center; /* Centralizar horizontalmente */
   float: right;
-  margin-top: 15px;
+  margin-top: 11px;
   margin-right: 12px;
 }
 
-.moreInfo{
+.moreInfo {
   width: 100%;
 }
-.buttonInfo{
+
+.buttonInfo {
   float: right;
   font-family: 'PT Sans Narrow', sans-serif;
   color: white;
@@ -213,12 +250,12 @@ html{
   font-size: 20px;
 }
 
-.nameNota{
+.nameNota {
   padding-right: 10px;
-  color:white;
+  color: white;
 }
 
-.note{
+.note {
   /* border: 2px solid rgba(255, 255, 255, 0.822); */
   text-align: center;
   width: 45px;
@@ -228,79 +265,75 @@ html{
   font-weight: bolder;
   position: absolute;
   margin-top: 19px;
-  margin-left: 5px;
-  /* background-color: white; */
-}
-.star{
-  width: 55px;
-  height: 55px;
 }
 
-.note.green{
-  color:green;
+.star {
+  width: 65px;
+  height: 65px;
 }
 
-.note.red{
-  color:red;
+.note.green {
+  color: green;
 }
 
-.note.orange{
-  color:rgb(214, 139, 0);
+.note.red {
+  color: red;
 }
 
-.containerTrailer{
+.note.orange {
+  color: rgb(214, 139, 0);
+}
+
+.containerTrailer {
   display: flex;
   grid-template-columns: auto;
   margin: auto;
   width: 60%;
   padding: 30px;
-
 }
 
-.titleTrailer{
+
+.titleTrailer {
   font-size: 25px;
   font-weight: bolder;
-  border-radius: 25px; 
+  border-radius: 25px;
   text-transform: uppercase;
   color: rgb(79, 26, 94);
   width: 8%;
   padding: 8px;
 }
 
-.videoTrailer{
+.videoTrailer {
   padding-top: 10px;
   width: 100%;
 
 }
 
-iframe{
+iframe {
   margin-top: 20px;
   border-radius: 20px;
 }
 
-.backPage{
+.backPage {
   margin-top: 20px;
   width: 60px;
-  padding: 2px;
+  padding: 5px;
   text-align: center;
-  margin-left: 260px;
+  margin-left: 20%;
   border: 2px solid white;
   border-radius: 20px;
   background-color: #3D0158;
-}
+} 
+
 
 .colorLink:hover {
   color: rgb(170, 170, 170);
 }
 
-.colorLink{
+.colorLink {
   color: white;
 }
 
-.errorMessage{
+.errorMessage {
   text-align: center;
 }
-
-
-
-
